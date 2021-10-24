@@ -1,29 +1,36 @@
 <template>
   <div id="app">
-    <header class="header d-flex justify-content-between">
-      <div class="d-flex align-items-center">
-        <div class="logo">
-          <a href="#"><p class="logo_text">NextStep</p></a>
+    <div>
+      <header class="header d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+          <div class="logo">
+            <a href="#"><p class="logo_text">NextStep</p></a>
+          </div>
+          <div class="header_pillar"></div>
+          <nav class="nav align-items-center">
+            <ul class="nav_list d-flex">
+              <li class="nav_list-item"><a href="#">Home</a></li>
+              <li class="nav_list-item"><a href="#">Learn</a></li>
+              <li class="nav_list-item"><a href="#">Technology</a></li>
+              <li class="nav_list-item"><a href="#">About Us</a></li>
+            </ul>
+          </nav>
         </div>
-        <div class="header_pillar"></div>
-        <nav class="nav align-items-center">
-          <ul class="nav_list d-flex">
-            <li class="nav_list-item"><a href="#">Home</a></li>
-            <li class="nav_list-item"><a href="#">Learn</a></li>
-            <li class="nav_list-item"><a href="#">Technology</a></li>
-            <li class="nav_list-item"><a href="#">About Us</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header-btns d-flex">
-        <button class="btn btn_in">Sign in</button>
-        <button class="btn btn_up">Sign up</button>
-      </div>
-    </header>
-    
+        <div class="header-btns d-flex">
+          <button class="btn btn_in">Sign in</button>
+          <button class="btn btn_up">Sign up</button>
+        </div>
+      </header>    
+    </div>
     <router-view />
   </div>
 </template>
+<script>
+// import Home from "./views/Home.vue";
+export default {
+  name: "app",
+};
+</script>
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
@@ -43,7 +50,7 @@ ul {
   align-items: center;
   background: #e5fdff;
   width: 100%;
-  position: fixed;
+  // position: fixed;
   top: 0;
 
   .logo {
@@ -99,7 +106,7 @@ ul {
       }
       &-item:hover::after {
         width: 100%;
-        left: 0;        
+        left: 0;
       }
     }
   }
