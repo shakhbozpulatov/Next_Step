@@ -4,13 +4,13 @@
       <header class="header d-flex justify-content-between">
         <div class="d-flex align-items-center">
           <div class="logo">
-            <a href="#"><p class="logo_text">NextStep</p></a>
+            <a href="/"><p class="logo_text">NextStep</p></a>
           </div>
           <div class="header_pillar"></div>
           <nav class="nav align-items-center">
             <ul class="nav_list d-flex">
-              <li class="nav_list-item"><a href="#">Home</a></li>
-              <li class="nav_list-item"><a href="#">Learn</a></li>
+              <li class="nav_list-item"><router-link to="/">Home</router-link></li>
+              <li class="nav_list-item"><router-link to="learn">Learn</router-link></li>
               <li class="nav_list-item"><a href="#">Technology</a></li>
               <li class="nav_list-item"><a href="#">About Us</a></li>
             </ul>
@@ -49,8 +49,7 @@ ul {
   padding: 14px 42px;
   align-items: center;
   background: #e5fdff;
-  width: 100%;
-  // position: fixed;
+  width: 100%;  
   top: 0;
 
   .logo {

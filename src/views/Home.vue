@@ -28,17 +28,21 @@
       </div>
     </section>
     <div class="cards-wrapper">
-      <div class="container d-flex align-items-center justify-content-center gap-4">
+      <div
+        class="container d-flex align-items-center justify-content-center gap-4"
+      >
         <div class="cards d-flex align-items-center">
           <div class="img-part back-color-dark">
             <img src="@/assets/images/website.png" alt="" />
           </div>
-          <div class="text-part">
-            <h4 class="heading">Learn</h4>
-            <p class="text">
-              Discover training paths by role, subject matter or technology
-            </p>
-          </div>
+          <router-link to="learn">
+            <div class="text-part">
+              <h4 class="heading">Learn</h4>
+              <p class="text">
+                Discover training paths by role, subject matter or technology
+              </p>
+            </div>
+          </router-link>
         </div>
         <div class="cards d-flex align-items-center">
           <div class="img-part back-color-medium">
@@ -77,8 +81,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .intro {
+  background: url("../assets/images/backimg.png") no-repeat center center;
   user-select: none;
-  background: #9744f7;
+  // background: #9744f7;
   padding: 34px 0 72px;
   .search-bar {
     max-width: 428px;
@@ -128,8 +133,18 @@ export default {
       color: #ffffff;
     }
   }
-  // .intro-img-wrapper{
-  // }
+  .intro-img-wrapper {
+    max-width: 375px;
+    img{
+      transition: all 0.3s;
+      width: 100%;
+    }
+  }
+  .intro-img-wrapper {
+    img:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 .cards-wrapper {
   height: 140px;
@@ -137,15 +152,24 @@ export default {
   .container {
     position: absolute;
     bottom: 50px;
-    left: 120px;    
+    left: 10%;
     .cards {
       max-width: 294px;
       width: 100%;
       background: #ffffff;
       border-radius: 10px;
       cursor: pointer;
+      height: 120px;
+      transition: all 0.3s;
       .img-part {
+        width: 10px;
+        height: 100%;
+        transition: all 0.3s;
         padding: 32px 10px;
+        img {
+          opacity: 0;
+          transition: all 0.3s;
+        }
       }
       .back-color-dark {
         background: #0065b3;
@@ -181,6 +205,15 @@ export default {
         }
         .m-10 {
           margin-bottom: 18px;
+        }
+      }
+    }
+    .cards:hover {
+      .img-part {
+        width: 74px;
+        padding: 32px 10px;
+        img {
+          opacity: 1;
         }
       }
     }
