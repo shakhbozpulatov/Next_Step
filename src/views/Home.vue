@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <next-header />
     <section class="intro">
       <div class="container d-flex justify-content-between">
         <div>
@@ -71,15 +72,21 @@
 
 <script>
 // @ is an alias to /src
-
+import NextHeader from "../components/nextHeader.vue"
 export default {
   name: "Home",
+  components:{
+    NextHeader,
+  },
   data() {
     return {};
   },
 };
 </script>
 <style lang="scss" scoped>
+a{
+  text-decoration: none;
+}
 .intro {
   background: url("../assets/images/backimg.png") no-repeat center center;
   user-select: none;
@@ -135,16 +142,11 @@ export default {
   }
   .intro-img-wrapper {
     max-width: 375px;
-    img{
+    img {
       transition: all 0.3s;
       width: 100%;
     }
-  }
-  .intro-img-wrapper {
-    img:hover {
-      transform: scale(1.1);
-    }
-  }
+  } 
 }
 .cards-wrapper {
   height: 140px;

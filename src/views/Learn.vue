@@ -1,5 +1,6 @@
 <template>
   <div class="learn">
+    <next-header />
     <div class="container d-flex align-items-center gap-4">
       <div class="card-wrap">
         <h3 class="subject">Microcontrol</h3>
@@ -80,7 +81,9 @@
   </div>
 </template>
 <script>
+import nextHeader from '../components/nextHeader.vue';
 export default {
+  components: { nextHeader },
   name: "Learn",
 };
 </script>
