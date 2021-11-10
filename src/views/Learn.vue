@@ -4,28 +4,30 @@
     <div class="container d-flex align-items-center gap-4">
       <div class="card-wrap">
         <h3 class="subject">Microcontrol</h3>
-        <div class="card-item">
-          <div class="img-card">
-            <img src="@/assets/images/microcontroller.png" alt="" />
+        <router-link class="mc-link" to="microcontroller">
+          <div class="card-item">
+            <div class="img-card">
+              <img src="@/assets/images/microcontroller.png" alt="" />
+            </div>
+            <div class="text-wrap">
+              <h4 class="title">Microcontrollers</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident, recusandae.
+              </p>
+              <h4 class="title">Arduino</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident, recusandae.
+              </p>
+              <h4 class="title">ESP 32</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident, recusandae.
+              </p>
+            </div>
           </div>
-          <div class="text-wrap">
-            <h4 class="title">Microcontrollers</h4>
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Provident, recusandae.
-            </p>
-            <h4 class="title">Arduino</h4>
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Provident, recusandae.
-            </p>
-            <h4 class="title">ESP 32</h4>
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Provident, recusandae.
-            </p>
-          </div>
-        </div>
+        </router-link>
       </div>
       <div class="card-wrap">
         <h3 class="subject">Language</h3>
@@ -54,41 +56,49 @@
       </div>
       <div class="card-wrap">
         <h3 class="subject">Modules</h3>
-        <div class="card-item">
-          <div class="img-card">
-            <img src="@/assets/images/modules.png" alt="" />
+        <router-link to="modules">
+          <div class="card-item">
+            <div class="img-card">
+              <img src="@/assets/images/modules.png" alt="" />
+            </div>
+            <div class="text-wrap">
+              <h4 class="title">Modules</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident, recusandae.
+              </p>
+              <h4 class="title">Sensors</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident, recusandae.
+              </p>
+              <h4 class="title">Displays</h4>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Provident, recusandae.
+              </p>
+            </div>
           </div>
-          <div class="text-wrap">
-            <h4 class="title">Modules</h4>
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Provident, recusandae.
-            </p>
-            <h4 class="title">Sensors</h4>
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Provident, recusandae.
-            </p>
-            <h4 class="title">Displays</h4>
-            <p class="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Provident, recusandae.
-            </p>
-          </div>
-        </div>
+        </router-link>
       </div>
     </div>
+    <next-footer />
   </div>
 </template>
 <script>
-import nextHeader from '../components/nextHeader.vue';
+import NextFooter from '../components/nextFooter.vue';
+import nextHeader from "../components/nextHeader.vue";
 export default {
-  components: { nextHeader },
+  components: { nextHeader, NextFooter },
   name: "Learn",
 };
 </script>
 <style lang="scss" scoped>
+a {
+  text-decoration: none;
+}
 .learn {
+  user-select: none;
   background-color: #ebebeb;
   .card-wrap {
     margin-top: 60px;
@@ -120,10 +130,10 @@ export default {
           margin-bottom: 4px;
         }
         .text {
-          font-family: Roboto, sans-serif;          
+          font-family: Roboto, sans-serif;
           font-weight: 500;
           font-size: 14px;
-          line-height: 16px;          
+          line-height: 16px;
           color: #4f4f4f;
         }
       }

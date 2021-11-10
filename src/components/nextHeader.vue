@@ -12,7 +12,7 @@
             <router-link to="learn">Learn</router-link>
           </li>
           <li class="nav_list-item"><a href="#">Technology</a></li>
-          <li class="nav_list-item"><a href="#">About Us</a></li>
+          <li class="nav_list-item"><router-link to="about">About Us</router-link></li>
         </ul>
       </nav>
     </div>

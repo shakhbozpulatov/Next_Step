@@ -10,8 +10,7 @@
           Make your own robots and create various sructures and learn new
           languages for yourself
         </p>
-        <div class="img-group d-flex">
-          <img class="phy-img" src="@/assets/images/phyton.png" alt="" />
+        <div class="img-group">          
           <img class="scheme-img" src="@/assets/images/scheme.png" alt="" />
         </div>
       </div>
@@ -147,7 +146,7 @@ a {
   .left {
     background: #aad5d5;
     padding: 30px;
-    max-width: 434px;
+    max-width: 454px;
     width: 100%;
     height: 100vh;
     .logo {
@@ -174,19 +173,8 @@ a {
         font-size: 16px;
         line-height: 25px;
       }
-      .img-group {
-        position: relative;
-        img {
-          position: absolute;
-        }
-        .phy-img {
-          left: 10px;
-          top: 30px;
-        }
-        .scheme-img {
-          left: 150px;
-          top: 110px;
-        }
+      .img-group{
+        margin-top: 58px;
       }
     }
   }

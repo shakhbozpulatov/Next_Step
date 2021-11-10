@@ -32,19 +32,19 @@
       <div
         class="container d-flex align-items-center justify-content-center gap-4"
       >
-        <div class="cards d-flex align-items-center">
-          <div class="img-part back-color-dark">
-            <img src="@/assets/images/website.png" alt="" />
-          </div>
-          <router-link to="learn">
+        <router-link to="learn">
+          <div class="cards d-flex align-items-center">
+            <div class="img-part back-color-dark">
+              <img src="@/assets/images/website.png" alt="" />
+            </div>
             <div class="text-part">
               <h4 class="heading">Learn</h4>
               <p class="text">
                 Discover training paths by role, subject matter or technology
               </p>
             </div>
-          </router-link>
-        </div>
+          </div>
+        </router-link>
         <div class="cards d-flex align-items-center">
           <div class="img-part back-color-medium">
             <img src="@/assets/images/communities.png" alt="" />
@@ -56,27 +56,31 @@
             </p>
           </div>
         </div>
-        <div class="cards d-flex align-items-center">
-          <div class="img-part back-color3-light">
-            <img src="@/assets/images/chat.png" alt="" />
+        <router-link to="about">
+          <div class="cards d-flex align-items-center">
+            <div class="img-part back-color3-light">
+              <img src="@/assets/images/chat.png" alt="" />
+            </div>
+            <div class="text-part">
+              <h4 class="heading">About us</h4>
+              <p class="text m-10">Find here about us and apply to our team</p>
+            </div>
           </div>
-          <div class="text-part">
-            <h4 class="heading">About us</h4>
-            <p class="text m-10">Find here about us and apply to our team</p>
-          </div>
-        </div>
+        </router-link>
       </div>
     </div>
+    <next-footer />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import NextHeader from "../components/nextHeader.vue"
+import NextFooter from "../components/nextFooter.vue";
+import NextHeader from "../components/nextHeader.vue";
 export default {
   name: "Home",
-  components:{
+  components: {
     NextHeader,
+    NextFooter,
   },
   data() {
     return {};
@@ -84,13 +88,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-a{
+a {
   text-decoration: none;
 }
 .intro {
   background: url("../assets/images/backimg.png") no-repeat center center;
   user-select: none;
-  // background: #9744f7;
   padding: 34px 0 72px;
   .search-bar {
     max-width: 428px;
@@ -146,7 +149,7 @@ a{
       transition: all 0.3s;
       width: 100%;
     }
-  } 
+  }
 }
 .cards-wrapper {
   height: 140px;
