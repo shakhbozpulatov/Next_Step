@@ -12,27 +12,29 @@ const routes = [
   },
   {
     path: "/learn",
-    name: "Learn",    
+    name: "Learn",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Learn.vue"),
   },
   {
     path: "/about",
-    name: "About",    
+    name: "About",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
     path: "/register",
-    name: "Register",    
+    name: "Register",
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Register.vue"),
   },
   {
     path: "/microcontroller",
-    name: "Microcontroller",    
+    name: "Microcontroller",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Learns/Microcontroller.vue"),
+      import(
+        /* webpackChunkName: "about" */ "../views/Learns/Microcontroller.vue"
+      ),
   },
   {
     path: "/modules",
@@ -44,6 +46,7 @@ const routes = [
 
 const router = new VueRouter({
   routes,
+  mode: "history",
 });
 
 export default router;

@@ -5,11 +5,33 @@
       <div class="container d-flex justify-content-between">
         <div>
           <div class="search-bar">
-            <input
-              class="search-input"
-              type="search"
-              placeholder="Search for"
-            />
+            <div class="input-wrapper">
+              <input
+                class="search-input"
+                type="text"
+                placeholder="Search for"
+                v-model="query"
+                @blur="searchResultVisible = false"
+                @focus="searchResultVisible = true"
+              />
+              <div v-if="query.length > 0" @click="reset" class="clean">&times;</div>
+            </div>
+            <div
+              v-if="query.length > 0 && searchResultVisible"
+              class="result-bar"
+            >
+              <h3 class="title">Title here</h3>
+              <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                culpa reprehenderit voluptatem doloribus, officiis nobis
+                laboriosam vitae repellat, nostrum quasi cumque.
+              </p>
+              <hr />
+              <p class="result">
+                No results for '<b>{{ query }}</b
+                >'
+              </p>
+            </div>
           </div>
           <p class="leader-text">The Leader in Learning Cloud</p>
           <div class="heading-text-wrap">
@@ -83,7 +105,15 @@ export default {
     NextFooter,
   },
   data() {
-    return {};
+    return {
+      query: "",
+      searchResultVisible: false,
+    };
+  },
+  methods:{
+    reset(){
+      this.query = ''
+    }
   },
 };
 </script>
@@ -98,18 +128,51 @@ a {
   .search-bar {
     max-width: 428px;
     margin-bottom: 28px;
-    .search-input {
-      background: #ffffff;
+    position: relative;
+    .input-wrapper {
+      position: relative;
       width: 100%;
-      border-radius: 5px;
+      .search-input {
+        background: #ffffff;
+        width: 100%;
+        border-radius: 5px;
+        font-family: Open Sans, sans-serif;
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+        color: #181515;
+        padding: 8px 12px;
+        outline: none;
+        border: 1px solid #a55ff5;
+      }
+      .clean{
+        position: absolute;
+        top: 6px;        
+        right: 10px;
+        cursor: pointer;
+      }
+    }
+    .result-bar {
+      position: absolute;
       font-family: Open Sans, sans-serif;
-      font-weight: bold;
-      font-size: 13px;
-      line-height: 18px;
-      color: #181515;
-      padding: 8px 12px;
-      outline: none;
-      border: 1px solid #a55ff5;
+      top: 44px;
+      left: 0;
+      background: #fff;
+      border-radius: 10px;
+      padding: 14px;
+      .title,
+      .text,
+      .result {
+        margin: 0;
+      }
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      .text {
+        font-size: 15px;
+      }
     }
   }
   .leader-text {
